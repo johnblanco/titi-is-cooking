@@ -1,0 +1,21 @@
+<%= form_for(@ingredient) do |f| %>
+  <div class="field">
+    <%= f.label :name, "Nombre" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :amount_included, "Cantidad" %><br>
+    <%= f.number_field :amount_included %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_unit, "Unidad de medida" %><br>
+    <%= f.select :measurement_unit,  @units %>
+  </div>
+    <div class="field">
+    <%= f.label :price, "Precio" %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear" %>
+  </div>
+<% end %>
