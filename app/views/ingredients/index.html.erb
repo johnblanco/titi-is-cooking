@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ingredients</h1>
+<h1>Lista de ingredientes</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
       <th>Cantidad</th>
-      <th>Unidad</th>
-      <th colspan="3"></th>
+      <th>Precio</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -16,11 +16,11 @@
     <% @ingredients.each do |ingredient| %>
       <tr>
         <td><%= ingredient.name %></td>
-        <td><%= ingredient.amount_included %></td>
-        <td><%= ingredient.measurement_unit %></td>
+        <td><%= ingredient.amount_included.to_s + " " + ingredient.measurement_unit %></td>
+        <td>$ <%= ingredient.price %></td>
         <td><%= link_to 'Editar', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Ver', ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Agregar precio', "/" %></td>
+        <td><%= link_to 'Precios', ingredient_path(ingredient) %></td>
+        <td><%= link_to 'Ajustar precio', "/" %></td>
         <td><%= link_to 'Eliminar', ingredient, method: :delete, data: { confirm: 'Seguro?' } %></td>
       </tr>
     <% end %>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Nuevo ingrediente', new_ingredient_path %>
+<%= link_to 'Nuevo', new_ingredient_path, :class => "btn btn-primary" %>

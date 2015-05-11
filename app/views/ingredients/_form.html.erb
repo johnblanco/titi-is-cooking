@@ -11,11 +11,14 @@
     <%= f.label :measurement_unit, "Unidad de medida" %><br>
     <%= f.select :measurement_unit,  @units %>
   </div>
+  <% unless action_name == "edit" %>
     <div class="field">
-    <%= f.label :price, "Precio" %><br>
-    <%= f.number_field :price %>
-  </div>
+      <%= f.label :price, "Precio" %><br>
+      <%= f.number_field :price %>
+    </div>
+  <% end %>
+  
   <div class="actions">
-    <%= f.submit "Crear" %>
+    <%= f.submit "Guardar", :class => "btn btn-primary" %>
   </div>
 <% end %>
