@@ -8,7 +8,7 @@
       <th>Nombre</th>
       <th>Cantidad</th>
       <th>Precio</th>
-      <th colspan="5"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -20,7 +20,6 @@
         <td>$ <%= ingredient.price %></td>
         <td><%= link_to 'Editar', edit_ingredient_path(ingredient) %></td>
         <td><%= link_to 'Precios', ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Ajustar precio', "/" %></td>
         <td><%= link_to 'Eliminar', ingredient, method: :delete, data: { confirm: 'Seguro?' } %></td>
       </tr>
     <% end %>

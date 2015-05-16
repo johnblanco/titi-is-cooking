@@ -25,8 +25,16 @@
   </tbody>
 </table>
 
+<%= form_for(@new_price) do |f| %>
+  <div class="field">
+    <%= f.label :price, "Nuevo precio" %><br>
+    <%= f.number_field :price %>
+    <%= f.hidden_field :ingredient_id %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Guardar", :class => "btn btn-primary"%>
+  </div>
+<% end %>
 
-
-
-<%= link_to 'Nuevo precio', ingredients_path %> |
 <%= link_to 'Volver', ingredients_path %>

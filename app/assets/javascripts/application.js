@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $("#new_price").submit(function(){
+    if($("#price_price").val()=="")
+      return false;
+    else  
+      return true;
+  });
+});
+

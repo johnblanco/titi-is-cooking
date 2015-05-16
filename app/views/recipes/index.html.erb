@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de recetas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Costo</th>
+      <th>Porciones</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+      </tr>
+      <tr>
+        <td><%= recipe.cost %></td>
+      </tr>
+      <tr>
+        <td><%= recipe.portions %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_recipe_path, :class => "btn btn-primary" %>

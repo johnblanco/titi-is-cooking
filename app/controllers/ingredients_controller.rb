@@ -11,6 +11,8 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show
+    @new_price = Price.new
+    @new_price.ingredient = @ingredient
   end
 
   # GET /ingredients/new
